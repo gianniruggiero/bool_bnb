@@ -1,0 +1,127 @@
+.on_evidence {
+    // height: 500px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba($color: #f2f8f8, $alpha: 1);
+    padding: 30px 0px;
+    @media (max-width: 576px) {
+        position: relative;
+        top: 105px;
+    }
+    .title {
+        font-weight: bold;
+        font-style: italic;
+        color: black;
+    }
+    .sub-title {
+        display: inline-block;
+        color: lightseagreen;
+        font-weight: bold;
+        &:hover {
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+
+    .wrap_gallery {
+        // height: 250px;
+        position: relative;
+        margin-bottom: 70px;
+        &:hover {
+            .arrow {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+        }
+        .arrow {
+            width: 40px;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            background-color: white;
+            z-index: 1;
+            &:hover {
+                opacity: 0.95;
+                cursor: pointer;
+                background-color: lightseagreen;
+                .ico_arrow {
+                    color: white;
+                }
+            }
+            .ico_arrow {
+                font-size: 60px;
+                color: lightseagreen;
+            }
+        }
+        .prev_arrow {
+            left: 0px;
+        }
+        .next_arrow {
+            right: 0px;
+        }
+        .gallery {
+            height: 100%;
+            overflow-x: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+    
+            .card_gallery {
+                height: 100%;
+                padding: 0px 2px;
+                position: relative;
+                &:hover {
+                    .card_title {
+                        display: none;
+                    }
+
+                    .card_hover_title {
+                        display: block;
+                    }
+                }
+                .card_title {
+                    position: absolute;
+                    left: 2px;
+                    bottom: 20px;
+                    border-top: 1px solid lightseagreen;
+                    border-right: 1px solid lightseagreen;
+                    border-bottom: 1px solid lightseagreen;
+
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+
+                    padding: 5px 10px;
+                    background-color: white;
+                    color: black;
+                    .gallery_ico {
+                        color: lightseagreen;
+                    }
+                }
+                .card_hover_title {
+                    display: none;
+                    background-color: lightseagreen;
+                    color:white;
+
+                }
+                img {
+                    height: 250px;
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                    border-top: 4px solid lightseagreen;
+                    border: 0px 1px 1px 1px solid black;
+                    font-size: 0px;
+                    display: block;
+                    // Mobile
+                    @media (max-width: 576px) {
+                        height: 200px;
+                    }
+                }
+            } 
+        }
+    }
+
+
+}

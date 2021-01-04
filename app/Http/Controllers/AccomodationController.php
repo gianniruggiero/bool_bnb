@@ -79,10 +79,10 @@ class AccomodationController extends Controller
                 count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
                 {
                   // Se abbiamo riempito tutti gli array si ritorna la view della home per non ciclare inutilmente
-              return view('UI.Accomodations.home',compact('mostViewedAccomodation','services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+                  return view('UI.Accomodations.home',compact('mostViewedAccomodation','services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+                }
+              }
             }
-          }
-      }
       // Chiamiamo la view della home
       return view('UI.Accomodations.home',compact('mostViewedAccomodation','services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
     }
@@ -248,6 +248,8 @@ class AccomodationController extends Controller
               $accomodationServicesFiltered[] = $accomodation;
             }
           }
+        } else {
+          $accomodationServicesFiltered = $accomodationsToFilter;
         }
 
       // Cicliamo su $accomodationServicesFiltered per calcolare le distanze
@@ -255,7 +257,7 @@ class AccomodationController extends Controller
           // Calcoliamo la distanza
           $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['latitude'], $data['longitude']);
           // La distanza di default la prima volta sarà 20
-          if ($distance<=6000) {
+          if ($distance<=20) {
             $distance = round($distance,1);
               // Inseriamo tutti con distanza opportuna
               $tempAccomodationsFiltered = [
@@ -274,7 +276,7 @@ class AccomodationController extends Controller
         asort($distances);
 
 
-        // Cicliamo sull'array delee distanze
+        // Cicliamo sull'array delle distanze
         foreach ($distances as $key => $value) {
           // Inseriamo il relativo valore in maniera crescente all'interno di $accomodationsFilteredAsc
           $accomodationsFilteredAsc[] = $accomodationsFiltered[$key];
@@ -283,6 +285,7 @@ class AccomodationController extends Controller
         // Assegnamo l'array ordinato ad $accomodationsFiltered
         $accomodationsFiltered = $accomodationsFilteredAsc;
 
+        dd($accomodationsFiltered);
 
          return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
      }
@@ -306,5 +309,54 @@ class AccomodationController extends Controller
       return view('TEST.map', compact('accomodation'));
      }
 
+     public function search_type($type_id)
+     {
+
+        // Prendiamo i dati di Types e Services
+        $types = AccomodationType:: all();
+        $services = Service::all();
+      
+        // Metodo per aprire pagina ricerca dal click nella sezione type della homepage
+        // Prendiamo tutti gli appartamenti di tipo uguale a $type_id
+        $accomodationsFilteredTemp = Accomodation::where("type_id", "=", $type_id)
+        ->get();
+
+        // Array che conterrà i record filtrati dalla ricerca
+        $accomodationsFiltered = [];
+        
+        // Cicliamo su $accomodationFilteredTemp per preparare i dati da inserire nel record
+        foreach ($accomodationsFilteredTemp as $accomodation) {
+        
+          $tempAccomodationsFiltered = [
+                  'accomodation' => $accomodation,
+                  'distance' => -1,
+                  'services' => $accomodation->services,
+                  'type' => $accomodation->accomodation_type
+              ];
+              // Inseriamo nell'array finale
+              $accomodationsFiltered[] = $tempAccomodationsFiltered;
+        }
+
+        // Ricerchiamo Accomodations con ADV attive
+        $sponsoredAccomodations = [];
+        $accomodations = Accomodation::all();
+        // Cicliamo su tutte le $Accomodations per verificare se ci sono ADVS
+        foreach ($accomodations as $accomodation) {
+          // Controlliamo se ci sono record nella tabella pivot accomodation_advs
+          if (count($accomodation->advs)>0 ) {
+            // Controlliamo se l'ultimo record contiene una data di scadenza dell'ADV maggiore della data odierna
+            if($accomodation->advs[count($accomodation->advs)-1]->pivot->end_adv > Carbon::now())
+            {
+              // Inseriamo il record nell'array per passarlo alla view
+              $sponsoredAccomodations[] = $accomodation;
+            }
+          }
+        }
+
+         return view('UI.Accomodations.search',compact('types', 'services', 'sponsoredAccomodations', 'accomodationsFiltered'));
+     }
+
+
 
 }
+

@@ -35,9 +35,14 @@ use Illuminate\Support\Facades\Auth;
   // rotte UI
   Route::get('/', 'AccomodationController@index')->name('home');
   Route::get('/search', 'AccomodationController@search')->name('search');
+  Route::get('/search/{type_id}', 'AccomodationController@search_type')->name('search_type');
   Route::get('/show/{slug}', 'AccomodationController@show')->name('show');
   // rotte MESSAGE
   Route::post('/accomodations/message_send', 'AccomodationController@message_send')->name('message_send');
 
   // Rotta TEST per mappe tom tom
   Route::get('/map', 'AccomodationController@map')->name('map');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -14,16 +14,16 @@ class AccomodationTypesTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         // Creiamo array prototipo per i type
-        $protoType = ['accomodation','room','mansion','house','loft','hostel'];
+        $protoType = ['appartamento','stanza','villa','casa','loft','ostello'];
         // Cicliamo su ogni elemento di $protoType
         foreach ($protoType as $type) {
             // allochiamo memoria per un'istanza di AccomodationType
             $newType = new AccomodationType;
             // riempiamo il campo name con ogni elemento di $protoType
             $newType->name = $type;
-            $newType->image = $faker->imageUrl(800,600,'type:'.$type);
+            $newType->image = 'http://localhost:8000/storage/type_image/'.$newType->name.'.jpeg';
             // salviamo tutto
             $newType->save();
-        }
+        }    
     }
 }
