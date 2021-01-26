@@ -102,14 +102,24 @@ $(".input_search").click(function () {
 $(".search_icon").click(function (event) {
   if (!$(this).hasClass("active_search_ico")) {
     event.preventDefault();
+  } else {
+    // togliamo stile attivo alla search-icon
+    $(".search_icon").removeClass("active_search_ico"); // minimizza la search-bar
+
+    $(".search_box").removeClass("max_search_bar"); // elimina tutti i risultati dal ul del pannello
+
+    $(".search_results_ul >li").remove(); // cancella il testo digitato nella input search
+
+    $(".input_search").val("");
   }
 }); // EVENTO CLICK fuori dal results panel
 
 window.onclick = function (event) {
   var panel = document.getElementById('results_panel');
-  var inputsearch = document.getElementById('input_search'); // Controlla che il genitore dell'elemento cliccato non è results_panel e non è nemmeno la input search    
+  var inputsearch = document.getElementById('input_search');
+  var searchicon = document.getElementById('search_form'); // Controlla che il genitore dell'elemento cliccato non è results_panel e non è nemmeno la input search    
 
-  if (event.target.offsetParent !== panel && event.target !== inputsearch) {
+  if (event.target.offsetParent !== panel && event.target !== inputsearch && event.target.offsetParent !== searchicon) {
     // togliamo stile attivo alla search-icon
     $(".search_icon").removeClass("active_search_ico"); // minimizza la search-bar
 

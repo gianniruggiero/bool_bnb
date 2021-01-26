@@ -104,7 +104,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = $faker->numberBetween(1, 3);
                     $newAccomodation->toilets = $faker->numberBetween(1, 2);
                     $newAccomodation->square_meters = $faker->numberBetween(80, 200);
-                    $newAccomodation->price = $faker->randomFloat(2, 120, 200);
+                    $newAccomodation->price = intval($faker->randomFloat(2, 120, 200));
                     break;
                 
                 case 2:
@@ -113,7 +113,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = 1;
                     $newAccomodation->toilets = 1;
                     $newAccomodation->square_meters = $faker->numberBetween(9, 30);
-                    $newAccomodation->price = $faker->randomFloat(2, 30, 150);
+                    $newAccomodation->price = intval($faker->randomFloat(2, 30, 150));
                     break;
 
                 case 3:
@@ -122,7 +122,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = $faker->numberBetween(5,15);
                     $newAccomodation->toilets = $faker->numberBetween(2,4);
                     $newAccomodation->square_meters = $faker->numberBetween(200, 700);
-                    $newAccomodation->price = $faker->randomFloat(2, 400, 900);
+                    $newAccomodation->price = intval($faker->randomFloat(2, 400, 900));
                     break;
 
                 case 4:
@@ -131,7 +131,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = $faker->numberBetween(2,4);
                     $newAccomodation->toilets = $faker->numberBetween(1,2);
                     $newAccomodation->square_meters = $faker->numberBetween(100, 200);
-                    $newAccomodation->price = $faker->randomFloat(2, 120, 300);
+                    $newAccomodation->price = intval($faker->randomFloat(2, 120, 300));
                     break;
 
                 case 5:
@@ -140,7 +140,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = $faker->numberBetween(2,4);
                     $newAccomodation->toilets = $faker->numberBetween(1,2);
                     $newAccomodation->square_meters = $faker->numberBetween(100, 200);
-                    $newAccomodation->price = $faker->randomFloat(2, 150, 400);
+                    $newAccomodation->price = intval($faker->randomFloat(2, 150, 400));
                     break;
 
                 case 6:
@@ -149,7 +149,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = 1;
                     $newAccomodation->toilets = $faker->numberBetween(0,1);
                     $newAccomodation->square_meters = $faker->numberBetween(15, 30);
-                    $newAccomodation->price = $faker->randomFloat(2, 30, 70);
+                    $newAccomodation->price = intval($faker->randomFloat(2, 30, 70));
                     break;
             }
 
@@ -200,7 +200,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = $faker->numberBetween(1, 3);
                     $newAccomodation->toilets = $faker->numberBetween(1, 2);
                     $newAccomodation->square_meters = $faker->numberBetween(80, 200);
-                    $newAccomodation->price = $faker->randomFloat(2, 120, 200);
+                    $newAccomodation->price = $faker->randomFloat(0, 120, 200);
                     break;
                 
                 case 2:
@@ -209,7 +209,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = 1;
                     $newAccomodation->toilets = 1;
                     $newAccomodation->square_meters = $faker->numberBetween(9, 30);
-                    $newAccomodation->price = $faker->randomFloat(2, 30, 150);
+                    $newAccomodation->price = $faker->randomFloat(0, 30, 150);
                     break;
 
                 case 3:
@@ -218,7 +218,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = $faker->numberBetween(5,15);
                     $newAccomodation->toilets = $faker->numberBetween(2,4);
                     $newAccomodation->square_meters = $faker->numberBetween(200, 700);
-                    $newAccomodation->price = $faker->randomFloat(2, 400, 900);
+                    $newAccomodation->price = $faker->randomFloat(0, 400, 900);
                     break;
 
                 case 4:
@@ -227,7 +227,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = $faker->numberBetween(2,4);
                     $newAccomodation->toilets = $faker->numberBetween(1,2);
                     $newAccomodation->square_meters = $faker->numberBetween(100, 200);
-                    $newAccomodation->price = $faker->randomFloat(2, 120, 300);
+                    $newAccomodation->price = $faker->randomFloat(0, 120, 300);
                     break;
 
                 case 5:
@@ -236,7 +236,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = $faker->numberBetween(2,4);
                     $newAccomodation->toilets = $faker->numberBetween(1,2);
                     $newAccomodation->square_meters = $faker->numberBetween(100, 200);
-                    $newAccomodation->price = $faker->randomFloat(2, 150, 400);
+                    $newAccomodation->price = $faker->randomFloat(0, 150, 400);
                     break;
 
                 case 6:
@@ -245,7 +245,7 @@ class AccomodationsTableSeeder extends Seeder
                     $newAccomodation->rooms = 1;
                     $newAccomodation->toilets = $faker->numberBetween(0,1);
                     $newAccomodation->square_meters = $faker->numberBetween(15, 30);
-                    $newAccomodation->price = $faker->randomFloat(2, 30, 70);
+                    $newAccomodation->price = $faker->randomFloat(0, 30, 70);
                     break;
             }
 

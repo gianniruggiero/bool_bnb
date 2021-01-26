@@ -14,7 +14,7 @@ class ServicesTableSeeder extends Seeder
     {
 
         // Array con tutti i servizi richiesti
-        $services = ['wi-fi', 'parking', 'pool', 'reception', 'sauna', 'sea_view'];
+        $services = ['wi-fi', 'parcheggio', 'piscina', 'reception', 'sauna', 'vista mare'];
 
         // Utilizziamo $services per popolare la tabella
         foreach($services as $service){

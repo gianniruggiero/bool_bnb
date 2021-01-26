@@ -1,6 +1,8 @@
 // Chiama la document ready function
 $(document).ready(function() {
 
+    setImgtopviewsHeight();
+
     // SCROLL-BAR EVENT per gestione opacity Header
     $(window).scroll(function() {
         // Calcola la soglia per cambiare opacità
@@ -83,10 +85,6 @@ $(document).ready(function() {
         // Definisce la misura dello scroll al click
         var scrollVal = 400;
 
-        console.log("scrollStart: "+scrollStart);
-        console.log("maxScrollLeft: "+maxScrollLeft);
-        console.log("scrollVal: "+scrollVal);
-
         // Cotrolla che la posizione della scroll--bar non sia a fine corsa
         if (scrollStart <= maxScrollLeft) {
             // Confronta se la misura dello scroll automatico (scrollVal) è inferiore alla misura effettiva per arrivare a finecorsa
@@ -127,7 +125,7 @@ $(document).ready(function() {
         console.log( "($(this).scrollLeft(): "+parseInt($(this).scrollLeft()));
 
         // Controlla la posizione della Scroll-bar per visualizzare o meno le arrows PREV e NEXT
-        if (parseInt($(this).scrollLeft()) == maxScrollLeft) {
+        if (parseInt($(this).scrollLeft()) >= (maxScrollLeft - 1)) {
             // Nasconde la NEXT_arrow
             $(".next_arrow").addClass("invisible");
         } else if (parseInt($(this).scrollLeft()) == 0) {
@@ -140,6 +138,24 @@ $(document).ready(function() {
         };
     });
 
+    // GALLERY TOPVIEWS - evento mouseenter
+    $(".gallery_topviews").on ("click", ".thumbnail", function(){
+        var newImage = $(this).attr("data-url");
+        console.log (newImage);
+        $(".img_topviews").attr("src", newImage);
+        $(".thumbnail").css("opacity", 0.4);
+        $(this).css("opacity", 1);
+    });
+
+    window.addEventListener("resize", function(e) {
+        setImgtopviewsHeight();
+    });
 
 // chiusura "document ready function"
 });
+
+// funzione che imposta altezza dell'immagine principale della topviews pari a una percentuale della sua larghezza
+function setImgtopviewsHeight() {
+    var newHeight = parseInt($(".img_topviews").css("width")) * 0.7;
+    $(".img_topviews").css("height", newHeight);
+}

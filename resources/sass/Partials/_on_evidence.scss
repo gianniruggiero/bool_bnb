@@ -2,8 +2,9 @@
     // height: 500px;
     width: 100%;
     text-align: center;
-    background-color: rgba($color: #f2f8f8, $alpha: 1);
-    padding: 30px 0px;
+    background: rgb(255,255,255);
+    padding-top: 40px;
+    // background: linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(32,178,170,1) 100%);
     @media (max-width: 576px) {
         position: relative;
         top: 105px;
@@ -12,13 +13,31 @@
         font-weight: bold;
         font-style: italic;
         color: black;
+        @media (max-width: 991px) {
+            text-align: left;
+        }
+        @media (max-width: 450px) {
+            font-size: 24px;
+        }            
+
     }
     .sub-title {
-        display: inline-block;
+        // display: inline-block;
         color: lightseagreen;
         font-weight: bold;
+        @media (max-width: 991px) {
+            text-align: left;
+        }
+        @media (max-width: 450px) {
+            font-size: 13px;
+        }
+        @media (max-width: 400px) {
+            font-size: 12px;
+        }            
+        @media (max-width: 350px) {
+            font-size: 11px;
+        }                        
         &:hover {
-            cursor: pointer;
             text-decoration: none;
             font-weight: bold;
         }
@@ -102,8 +121,8 @@
                 }
                 .card_hover_title {
                     display: none;
-                    background-color: lightseagreen;
-                    color:white;
+                    // background-color: lightseagreen;
+                    // color:white;
 
                 }
                 img {

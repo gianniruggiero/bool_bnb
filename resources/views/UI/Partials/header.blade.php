@@ -8,7 +8,6 @@
                     <nav class="left d-flex align-items-center col-4 col-sm-6 col-md-2 col-lg-3 col-xl-3">
                         <a href="{{route('home')}}"><img class="logo logo_black_header" src="{{asset('storage/images/logo_boolbnb_w.png')}}" alt="logo boolBnB"></a>
                         <a href="{{route('home')}}"><img class="logo logo_white_header" src="{{asset('storage/images/logo_boolbnb_b.png')}}" alt="logo boolBnB"></a>
-
                     </nav>
 
                     <!-- Navbar CX-->
@@ -18,7 +17,7 @@
                             <div class="search_bar d-flex d-none justify-content-center align-items-center">
                                 <div class="left_circle"></div>
                                 <input id="input_search" class="input_search" type="text" placeholder="Dove vai?">
-                                <form class="search_form" action="{{route('search')}}" method="GET" enctype="multipart/form-data">
+                                <form id="search_form" class="search_form" action="{{route('search')}}" method="GET" enctype="multipart/form-data">
                                     @csrf
                                     @method('GET')
                                     <input class="search_lat" type="hidden" name="latitude">
@@ -28,7 +27,7 @@
                                     <input class="search_rooms" type="hidden" name="rooms">
                                     <input class="search_visible" type="hidden" name="visible">
                                     <input class="search_services" type="hidden" name="services[]">
-                                    <button class="btn_search_icon" type="submit"><i class="search_icon fas fa-search-location"></i></button>
+                                    <button id="btn_search_icon" class="btn_search_icon" type="submit"><i class="search_icon fas fa-search-location"></i></button>
                                 </form>
                                 <div class="right_circle"></div>
                             </div>

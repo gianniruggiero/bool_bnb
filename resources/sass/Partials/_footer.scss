@@ -1,0 +1,93 @@
+footer {
+    background-color: $color-4;
+    border-top: 1px solid $color-5;
+    padding-top: 30px;
+    @media (max-width: 576px) {
+        position: relative;
+        top: 105px;
+    }
+
+    .top {
+        padding-bottom: 20px;
+
+        .list_title{
+            font-weight: bold;
+            color: $color-1;
+        }
+        ul {
+            padding-left: 0px;
+            li {
+                text-decoration: none;
+                list-style: none;
+                .list_item {
+                    color: $color_2;
+                    // font-size: 14px;
+    
+                    &:hover {
+                        color: $color_1;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .logo_footer {
+            width: 130px;
+        }
+        .wrap_address {
+            margin-top: 20px;
+        }
+        .logo_subtitle {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .abstract {
+            font-style: italic;
+            font-size: 16px;
+            .quote {
+                color: $color-1;
+                font-size: 20px;
+            }
+            .fa-quote-left {
+                margin-right: 10px;
+            }
+            .fa-quote-right {
+                margin-left: 10px;
+                position: relative;
+                top: 10px;
+            }
+        }
+        .ceo_name {
+            font-weight: bold;
+        }
+
+    }
+
+
+    .bottom {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: 1px solid $color-5;
+        .side_copy {
+            .copyrights {
+                height: 100%;
+                margin-bottom: 0px;
+                line-height: 16px;
+            }
+        }
+        .side_social_links {
+            text-align: right;
+            .social_ico {
+                padding-left: 6px;
+                font-size: 24px;
+                color: $color-2;
+                &:hover {
+                    color: $color-1;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+}

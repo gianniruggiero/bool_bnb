@@ -33,7 +33,8 @@
 
 
 .info_section {
-    margin-bottom: 30px;
+    background-color: white;
+    // margin-bottom: 30px;
     @media (max-width: 576px) {
         position: relative;
         top: 105px;
@@ -41,6 +42,10 @@
     .card_info {
         padding: 40px 0px 20px 0px;
         height: 100%;
+        @media (max-width: 992px) {
+            padding-bottom: 0px;
+
+        }
         // &:first-child {
             // border-bottom: 2px solid lightgrey;
             // border-radius: 15px;
@@ -96,29 +101,38 @@
         .title {
             font-weight: bold;
             font-style: italic;
+            @media (max-width: 450px) {
+                font-size: 24px;
+            }
         }
         .sub-title {
             display: inline-block;
             color: #20b2aa;
             font-weight: bold;
-            &:hover {
-                cursor: pointer;
-                text-decoration: none;
-                font-weight: bold;
+            @media (max-width: 450px) {
+                font-size: 13px;
             }
-    
+            @media (max-width: 400px) {
+                font-size: 12px;
+            }            
+            @media (max-width: 350px) {
+                font-size: 11px;
+            }            
         }    
         img {
                 width: 100%;
             }
         .text {
-            font-size: 20px;
+            font-size: 18px;
             margin-top: 20px;
-            a {
-                color: #20b2aa;
+            @media (max-width: 450px) {
+                font-size: 16px;
+            }            
+            .info_link {
+                color: $color_1;
+                font-weight: bold;
                 &:hover {
-                    text-decoration: none;
-                    font-weight: bold;
+                    cursor: pointer;
                 }
             }
         }
