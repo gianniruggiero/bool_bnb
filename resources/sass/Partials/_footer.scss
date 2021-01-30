@@ -36,7 +36,17 @@ footer {
         }
         .wrap_address {
             margin-top: 20px;
+            @media (max-width: 992px) {
+                margin-bottom: 30px;
+            }
         }
+
+        nav {
+            @media (max-width: 768px) {
+                margin-bottom: 30px;
+            }
+        }
+
         .logo_subtitle {
             margin-top: 10px;
             font-weight: bold;
@@ -77,6 +87,11 @@ footer {
         }
         .side_social_links {
             text-align: right;
+            @media (max-width: 576px) {
+                text-align: left;
+                margin-top: 20px;
+
+            }
             .social_ico {
                 padding-left: 6px;
                 font-size: 24px;
@@ -84,6 +99,12 @@ footer {
                 &:hover {
                     color: $color-1;
                     cursor: pointer;
+                }
+                @media (max-width: 576px) {
+                    font-size: 32px;
+                    &:first-child {
+                        padding-left: 0px;
+                    }
                 }
             }
         }

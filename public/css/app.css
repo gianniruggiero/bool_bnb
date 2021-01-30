@@ -11731,6 +11731,18 @@ footer .top .wrap_address {
   margin-top: 20px;
 }
 
+@media (max-width: 992px) {
+  footer .top .wrap_address {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .top nav {
+    margin-bottom: 30px;
+  }
+}
+
 footer .top .logo_subtitle {
   margin-top: 10px;
   font-weight: bold;
@@ -11776,6 +11788,13 @@ footer .bottom .side_social_links {
   text-align: right;
 }
 
+@media (max-width: 576px) {
+  footer .bottom .side_social_links {
+    text-align: left;
+    margin-top: 20px;
+  }
+}
+
 footer .bottom .side_social_links .social_ico {
   padding-left: 6px;
   font-size: 24px;
@@ -11785,6 +11804,16 @@ footer .bottom .side_social_links .social_ico {
 footer .bottom .side_social_links .social_ico:hover {
   color: #20b2aa;
   cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  footer .bottom .side_social_links .social_ico {
+    font-size: 32px;
+  }
+
+  footer .bottom .side_social_links .social_ico:first-child {
+    padding-left: 0px;
+  }
 }
 
 .topviews {

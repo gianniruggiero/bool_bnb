@@ -166,8 +166,7 @@ $(".input_search").keyup(function () {
   var location = $.trim($(".input_search").val()); // Controlla che siano stati digitati almeno 3 caratteri
 
   if (location.length > 1) {
-    console.log(location); // Prepariamo la URL per la chiamata AJax all'API TOM TOM
-
+    // Prepariamo la URL per la chiamata AJax all'API TOM TOM
     var tomtomQueryString = "https://api.tomtom.com/search/2/search/" + location + ".json?typeahead=true&limit=10&countrySet=ITA&language=it-IT&extendedPostalCodesFor=Geo&minFuzzyLevel=1&maxFuzzyLevel=2&idxSet=PAD,POI%2CGeo%2CStr&view=Unified&key=5f9vpvhd3dCu5qyQPFDmWnkS1fQQ1Yrg"; // Selezioniamo il template handlebar per riempire la lista con i risultati della chiamata
 
     var source = $("#search-results-li-template").html();
@@ -178,8 +177,7 @@ $(".input_search").keyup(function () {
       "method": "GET",
       "success": function success(data) {
         // Array per raccogliere i risultati della chiamata API
-        var results = data.results;
-        console.log(results); // Ad ogni digit cancelliamo la lista di risultati precedenti
+        var results = data.results; // Ad ogni digit cancelliamo la lista di risultati precedenti
 
         $(".search_results_ul >li").remove(); // Cicliamo sui risultati di data.results
 

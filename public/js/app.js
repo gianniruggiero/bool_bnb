@@ -37386,9 +37386,7 @@ $(document).ready(function () {
 
   $(".gallery").scroll(function () {
     // Definisce l'ampiezza massima della Scroll-bar
-    var maxScrollLeft = parseInt($(".gallery")[0].scrollWidth - $(".gallery").width());
-    console.log("maxScrollLeft: " + maxScrollLeft);
-    console.log("($(this).scrollLeft(): " + parseInt($(this).scrollLeft())); // Controlla la posizione della Scroll-bar per visualizzare o meno le arrows PREV e NEXT
+    var maxScrollLeft = parseInt($(".gallery")[0].scrollWidth - $(".gallery").width()); // Controlla la posizione della Scroll-bar per visualizzare o meno le arrows PREV e NEXT
 
     if (parseInt($(this).scrollLeft()) >= maxScrollLeft - 1) {
       // Nasconde la NEXT_arrow
@@ -37407,7 +37405,6 @@ $(document).ready(function () {
 
   $(".gallery_topviews").on("click", ".thumbnail", function () {
     var newImage = $(this).attr("data-url");
-    console.log(newImage);
     $(".img_topviews").attr("src", newImage);
     $(".thumbnail").css("opacity", 0.4);
     $(this).css("opacity", 1);

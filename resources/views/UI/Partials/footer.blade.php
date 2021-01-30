@@ -10,9 +10,9 @@
                     <img class="logo_footer" src="{{asset('storage/images/logo_boolbnb_b.png')}}" alt="logo boolBnB">
                     <h6 class="logo_subtitle">Un alloggio per ogni viaggio</h6>
                     <div class="wrap_address">
-                        <div>Corso Europa, 7</div>
+                        <div>Corso Eurasia, 7</div>
                         <div>20110 Milano (ITALY)</div>
-                        <div>tel. 800.000.234</div>
+                        <div>tel. 800.000.000</div>
                         <div>P.I. 0499X0Y50234</div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                 {{-- abstract --}}
                 <div class="col-12 col-md-4 col-lg-3">
                     <p class="abstract"><i class="fas fa-quote-left quote"></i>Questo è il luogo dove i viaggiatori incontrano gli host pronti ad ospitarli. Per una notte, una settimana o un mese, scopri quale sarà la tua nuova casa.<i class="fas fa-quote-right quote"></i></p>
-                    <h6 class="ceo_name">Mario Rossi - boolBnB CEO</h6>
+                    <h6 class="ceo_name">Mario Rossix - boolBnB CEO</h6>
                 </div>
                 
     
