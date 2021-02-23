@@ -25,7 +25,7 @@ class AccomodationsTableSeeder extends Seeder
             "Appartamento in centro a Roma",
             "Stanza in appartamento a Roma",
             "Villa a Roma",
-            "Casa indipendenete a Roma",
+            "Casa indipendente a Roma",
             "Loft a Roma",
             "Posto letto in ostello a Roma"
         ];
@@ -50,7 +50,7 @@ class AccomodationsTableSeeder extends Seeder
             "Appartamento in centro a Milano",
             "Stanza in appartamento a MIlano",
             "Villa a Milano",
-            "Casa indipendenete a Milano",
+            "Casa indipendente a Milano",
             "Loft luminoso a Milano",
             "Posto letto in ostello a Milano"
         ];

@@ -2,7 +2,6 @@
     from {opacity:0;}
     to {opacity: 1;}
 }
-  
 
 .jumbo {
     // background-image: url('../../storage/images/jumbotron_bool_bnb.jpg');
@@ -15,7 +14,7 @@
     background-size: cover;
     position: relative;
     animation-name: slidein;
-    animation-duration: 4s;
+    animation-duration: 3s;
 
     @media (max-width: 1800px) {
         height: 850px;

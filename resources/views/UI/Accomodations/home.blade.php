@@ -241,21 +241,12 @@
 {{-- /TOPVIEWS section  --}}
 </section>
 
-
-
-
-
-@include('UI.Partials.footer')
+{{-- @include('UI.Partials.footer') --}}
 @endsection
 
 
 @section('src')
     <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/functions.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/search.js')}}"></script>
 @endsection
-
-
-
-
-
-

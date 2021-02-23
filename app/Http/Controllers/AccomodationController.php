@@ -116,6 +116,8 @@ class AccomodationController extends Controller
     public function show($slug)
     {
         $accomodation = Accomodation::where('slug', $slug)->first();
+        $types = AccomodationType::all();
+    
 /*
 ****************************************************************************************************************
 +
@@ -141,7 +143,7 @@ class AccomodationController extends Controller
 ****************************************************************************************************************
 */
 
-        return view('UI.Accomodations.show', compact('accomodation'));
+        return view('UI.Accomodations.show', compact('accomodation', 'types'));
     }
 
     /**

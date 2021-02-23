@@ -29,7 +29,7 @@ class AccomodationImagesTableSeeder extends Seeder
             $countPrincipal = 0;
             $moduloPrincipal = $faker->numberBetween(1, 3);
             // CARICA IN DB 10 IMMAGINI PER OGNI ACCOMODATION
-            for ($i=0; $i < 10; $i++) {
+            for ($i=0; $i < 9; $i++) {
                 // Creiamo un'istanza di accomodationImage
                 $newImage = new AccomodationImage();
                 // Riempiamo tutti i campi
