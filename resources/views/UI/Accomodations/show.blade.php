@@ -4,7 +4,19 @@
     boolBnB
 @endsection
 
+{{-- LINK HEAD --}}
+@section('link')
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.6.0/maps/maps.css'>
+@endsection
+
+
 @section('main_content')
+    {{-- @dd($accomodation); --}}
+    {{-- Input to receive accomodation infos to show --}}
+    <input id="latitude" type="hidden" value="{{$accomodation->latitude}}">
+    <input id="longitude" type="hidden" value="{{$accomodation->longitude}}">
+    <input id="accomodation_id" type="hidden" value="{{$accomodation->id}}">
+    <input id="title" type="hidden" value="{{$accomodation->title}}">
 
 {{-- SHOW section  --}}
 <section class="show">
@@ -21,9 +33,9 @@
         </div>
         {{-- WRAPPER topviews --}}
         <div class="wrap_topviews">
-            {{-- /BOOTSTRAP ROW --}}
+            {{-- BOOTSTRAP ROW --}}
             <div class="row">
-                {{-- COLONNA SINISTRA --}}
+                {{-- LEFT COLUMN --}}
                 <div class="col-12 col-lg-6">
                     {{-- COVER IMAGE --}}
                     <img class="img_topviews" src="{{$accomodation->cover_image}}" alt="">
@@ -35,14 +47,13 @@
                         {{-- @endif --}}
                         @endforeach
                     </div>
-                {{-- /COLONNA SINISTRA --}}
+                {{-- /LEFT COLUMN --}}
                 </div>
                 
-                {{-- /COLONNA DESTRA --}}
+                {{-- RIGHT COLUMN --}}
                 <div class="col-12 col-lg-6">
                     {{-- TITOLO --}}
-                    <h5 class="acc_title">{{$accomodation->accomodation_type->name}}</h5>
-                    <p class="acc_address"><i class="acc_address_ico fas fa-map-marker-alt"></i>  {{$accomodation->address}} - {{$accomodation->zip_code}} {{$accomodation->city}}</p>
+                    <h6 class="acc_type">TIPO ALLOGGIO: <span class="acc_type_val">{{$accomodation->accomodation_type->name}}</span> </h6>
                     {{-- <p class="acc_description">{{ \Illuminate\Support\Str::words($accomodation->description, 30, " [...] ") }}</p> --}}
                     <p class="acc_description">{{$accomodation->description}}</p>
                     {{-- <h6 class="acc_vedi_link"><a href="{{route("show", $accomodation->slug)}}">> VEDI ANNUNCIO COMPLETO</a></h6> --}}
@@ -129,10 +140,28 @@
                         </div>
                     {{-- /BOOTSTRAP ROW --}}
                     </div>
-                {{-- /COLONNA DESTRA --}}    
+                {{-- /RIGHT COLUMN --}}    
                 </div>
             {{-- /BOOTSTRAP ROW --}}    
             </div>
+
+            {{-- BOOTSTRAP ROW --}}
+            <div class="row">
+                <div class="col-12">
+                    <div class="wrap_address">
+                        <span class="info_title">INDIRIZZO: </span>
+                        <span class="acc_address"><i class="acc_address_ico fas fa-map-marker-alt"></i>  {{$accomodation->address}} - {{$accomodation->zip_code}} {{$accomodation->city}}</span>
+                    </div>
+                    {{-- <h2>Test TOM TOM Map</h2> --}}
+                    {{-- MAP WRAPPER --}}
+                    <div class="map_wrapper">
+                        {{-- MAP DIV --}}
+                        <div id='map' class='map'></div>
+                    </div>
+                </div>
+            {{-- /BOOTSTRAP ROW --}}
+            </div>
+    
 
         {{-- WRAPPER topviews --}}
         </div>
@@ -144,9 +173,11 @@
 @endsection
 
 @section('src')
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.6.0/maps/maps-web.min.js'></script>
     <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/search.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/map.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/show.js')}}"></script>
-
+    {{-- JS Tom Tom Maps Api SDK --}}
 @endsection
 

@@ -5,9 +5,11 @@
 @import 'variables';
 @import 'Partials/mixins';
 
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// CSS Tom Tom Map
+@import url('https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.6.0/maps/maps.css');
 
 // Partials
 @import 'Partials/main';
@@ -19,6 +21,8 @@
 @import 'Partials/footer';
 @import 'Partials/topviews';
 @import 'Partials/show';
+@import 'Partials/tom_tom_map';
+
 
 
 

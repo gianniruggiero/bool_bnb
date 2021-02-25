@@ -305,7 +305,7 @@ class AccomodationController extends Controller
     // METODI PER LA GESTIONE DEI MESSAGE / end
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-     public function map(Request $request)
+     public function map()
      {
       $accomodation = Accomodation::inRandomOrder()->limit(1)->get();
       return view('TEST.map', compact('accomodation'));

@@ -169,3 +169,50 @@
     }
     
 }
+
+@mixin map_mixin {
+    .map {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .marker-icon {
+        background-position: center;
+        background-size: 18px 18px;
+        border-radius: 50%;
+        height: 18px;
+        left: 6px;
+        position: absolute;
+        text-align: center;
+        top: 6px;
+        transform: rotate(45deg);
+        width: 18px;
+    }
+    .marker {
+        height: 30px;
+        width: 30px;
+    }
+    .marker-content {
+        background: #c30b82;
+        border-radius: 50% 50% 50% 0;
+        height: 30px;
+        left: 50%;
+        margin: -15px 0 0 -15px;
+        position: absolute;
+        top: 50%;
+        transform: rotate(-45deg);
+        width: 30px;
+    }
+    .marker-content::before {
+        background: #ffffff;
+        border-radius: 50%;
+        content: "";
+        height: 24px;
+        margin: 3px 0 0 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+    }
+}
