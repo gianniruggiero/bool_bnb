@@ -244,6 +244,10 @@
 {{-- @include('UI.Partials.footer') --}}
 @endsection
 
+@section('footer')
+        @include('UI.Partials.footer')
+@endsection
+
 
 @section('src')
     <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>

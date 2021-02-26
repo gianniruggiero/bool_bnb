@@ -6,7 +6,6 @@ $(document).ready(function() {
     // alert("sono arrivato");
     // $("header").removeClass("header_black_opacity");
 
-
     // GALLERY TOPVIEWS - evento click
     $(".gallery_topviews").on ("click", ".thumbnail", function(){
         var newImage = $(this).attr("data-url");
@@ -19,9 +18,11 @@ $(document).ready(function() {
         setImgtopviewsHeight();
         setThumbanilTopviewsHeight();
     });
-
+    
 // chiusura "document ready function"
 });
+
+
 
 // funzione che imposta altezza dell'immagine principale della topviews pari a una percentuale della sua larghezza
 function setImgtopviewsHeight() {
@@ -36,3 +37,5 @@ function setThumbanilTopviewsHeight() {
     console.log("height: " + newHeight);
     $(".thumbnail").css("height", newHeight);
 }
+
+

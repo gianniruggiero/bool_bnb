@@ -155,8 +155,10 @@
                     {{-- <h2>Test TOM TOM Map</h2> --}}
                     {{-- MAP WRAPPER --}}
                     <div class="map_wrapper">
+                        <span id="home_btn">HOME</span>
                         {{-- MAP DIV --}}
-                        <div id='map' class='map'></div>
+                        <div id='map' class='map'>
+                        </div>
                     </div>
                 </div>
             {{-- /BOOTSTRAP ROW --}}
@@ -172,12 +174,18 @@
 
 @endsection
 
+@section('footer')
+    <div class="wrap_footer">
+        @include('UI.Partials.footer')
+    </div>
+@endsection
+
 @section('src')
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.6.0/maps/maps-web.min.js'></script>
     <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/search.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/js/map.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/show.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/map.js')}}"></script>
     {{-- JS Tom Tom Maps Api SDK --}}
 @endsection
 
