@@ -50,6 +50,14 @@ function createMarker(icon, position, color, popupText) {
         .setLngLat(position)
         .setPopup(popup)
         .addTo(map);
+
+    // original code
+    //createMarker('accident.colors-white.jpg', [-78.17043537427266, 36.31817544230164], '#20b2aa', 'Villa in Centro a Roma');
+    // createMarker('accident.colors-white.svg', [-120.72217631449985, 42.73919549715691], '#20b2aa', 'SVG icon');
+    // createMarker('accident.colors-white.png', [-99.98580752275456, 33.43211082128627], '#20b2aa', 'PNG icon');
+    // iconElement.style.backgroundImage =
+    // 'url(http://localhost:8000/storage/map_image/map_icon.png)';
+
 };
 
 // function copied from http://detectmobilebrowsers.com/
@@ -63,7 +71,7 @@ function isMobileOrTablet() {
 function changeLocation() {
 
     // Change location with flight animation:
-    map.flyTo({center: [longitude, latitude], zoom: 12});
+    map.flyTo({center: [longitude, latitude]});
 
     // Change location with ease animation:
     // map.easeTo({center: point, zoom: 9});
@@ -73,19 +81,6 @@ function changeLocation() {
 
 }
 
-
-
-
-
-
-
-// Test
-//createMarker('accident.colors-white.jpg', [-78.17043537427266, 36.31817544230164], '#20b2aa', 'Villa in Centro a Roma');
-// createMarker('accident.colors-white.svg', [-120.72217631449985, 42.73919549715691], '#20b2aa', 'SVG icon');
-// createMarker('accident.colors-white.png', [-99.98580752275456, 33.43211082128627], '#20b2aa', 'PNG icon');
-
-// iconElement.style.backgroundImage =
-// 'url(http://localhost:8000/storage/map_image/map_icon.png)';
 
 
 

@@ -167,5 +167,3 @@ function setThumbanilTopviewsHeight() {
     console.log("height: " + newHeight);
     $(".thumbnail").css("height", newHeight);
 }
-
-

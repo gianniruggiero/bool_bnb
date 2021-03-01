@@ -2,15 +2,22 @@
     width: 100%;
     text-align: center;
     background: $color_3;
-    padding: 30px 0px;
-    position: relative;
-    top: 60px;
+    padding: 90px 0px 30px 0px;
+    // position: relative;
+    // top: 60px;
 
     @media (max-width: 768px) {
+        padding: 135px 0px 30px 0px;
+        // position: relative;
+        // top: 105px;
+    }
+
+    @media (max-width: 576px) {
+        padding: 30px 0px;
         position: relative;
         top: 105px;
-        padding: 30px 0px;
-
+        // position: relative;
+        // top: 105px;
     }
 
     .title {
@@ -28,8 +35,96 @@
     // include per mixin btn
     @include btn_std_mixin;
 
+
+
+    .contact {
+        width: 100%;
+        height: 0px;
+        margin-top: 10px;
+        // background-color: $color_4;
+        transition: all 1s;
+        text-align: left;
+        .wrap_inputs {
+            opacity: 0;
+            transition: all 1s;
+            .label {
+                color: red;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                text-align: right;
+                font-size: 16px;
+                line-height: 16px;
+            }
+            textarea:focus, input:focus {
+                outline: none;
+                background-color: $color_3;
+            }
+            .form_input {
+                width: 100%;
+                padding-left: 20px;
+                background-color: $color_4;
+                font-weight: 700;
+                // border: 1px solid $color_5;
+                // border-top: 1px solid black;
+                // border-top-left-radius: 5px;
+                // border-top-right-radius: 5px;
+                box-shadow: 0 1px 2px $color_5;
+                // border: solid 1px #2f96b4;
+                border-style: none;
+                // border-left: 5px solid $color_1;
+                // border-bottom: 4px solid $color_1;
+                &::placeholder {
+                    // padding-left: 10px;
+                    color: $color_1;
+                    // vertical-align: top;
+                    // font-size: 22px;
+                    // line-height: 22px;
+                }
+            }
+            #nickname, #email {
+                height: 40px;
+            }
+            #text_message {
+                padding-top: 10px;
+                resize: none;
+                height: 200px;
+            }
+            .wrap_btn_send {
+                height: 80px;
+                @media (max-width: 767px){
+                    text-align: center;;
+                }
+            }
+            #btn_send {
+                width: 20px;
+                position: relative;
+                top: 50px;
+                .fa-paper-plane {
+                    margin-right: 10px;
+                }
+            }
+        }
+    
+        .wrap_inputs_visible {
+            opacity: 1;
+        }
+        
+    }
+
+    .contact_open  {
+        height: 280px;
+        @media (max-width: 767px){
+            height: 520px;
+        }
+    }
+
     .wrap_topviews {
         margin-top: 30px;
+        @media (max-width: 767px){
+            margin-top: 0px;
+        }
         .img_topviews {
             width: 100%;
             // border-top: 5px solid $color_1;
@@ -86,7 +181,7 @@
         .acc_type {
             font-weight: bold;
             text-align: left;
-            @media (max-width: 576px) {
+            @media (max-width: 991px) {
                 margin-top: 16px;
             }
             .acc_type_val {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Accomodation;
+use App\UserMessage;
 
 
 class AccomodationController extends Controller
@@ -87,6 +88,44 @@ class AccomodationController extends Controller
         // Assegnamo l'array ordinato ad $accomodationsFiltered
         $accomodationsFilteredJSON = $accomodationsFilteredAsc;
         return response()->json($accomodationsFilteredJSON);
+    }
+
+    public function message_send(Request $request)
+    {
+        
+          // Trasferiamo in $data tutto i dati che sono stati inseriti all'interno del form
+        $data = $request->all();
+        
+        // Validazione dei dati ricevuti dal form con $request
+        $request->validate ([
+          'accomodation_id'=>'required',
+          'email'=>'required|max:100',
+          'nickname'=>'max:50',
+          'text_message'=>'required|max:300',
+        ]);
+       
+
+        // Creiamo una nuova istanza di UserMessage
+        $newMessage = new UserMessage();
+        // Riempiamo tutti i campi del nuovo record della tabella accomodations
+        $newMessage->accomodation_id = $data['accomodation_id'];
+        $newMessage->email = $data['email'];
+        $newMessage->nickname = $data['nickname'];
+        $newMessage->text_message = $data['text_message'];
+
+        // Salviamo il nuovo record nella tabella accomodations
+        $result = $newMessage->save();
+        // $result = null;
+        if ($result) {
+          return response()->json($newMessage, 201);
+        } else {
+          $answer = ["result"=>"non è stato possibile salvare il messaggio"];
+          return response()->json($answer, 500);
+        }
+
+        // $message = UserMessage::create($request->all());
+        // return response()->json($message, 201);
+
     }
 
     public function distance($lat1, $lon1, $lat2, $lon2) {

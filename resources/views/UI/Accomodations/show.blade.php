@@ -11,11 +11,10 @@
 
 
 @section('main_content')
-    {{-- @dd($accomodation); --}}
     {{-- Input to receive accomodation infos to show --}}
     <input id="latitude" type="hidden" value="{{$accomodation->latitude}}">
     <input id="longitude" type="hidden" value="{{$accomodation->longitude}}">
-    <input id="accomodation_id" type="hidden" value="{{$accomodation->id}}">
+    <input id="id" type="hidden" value="{{$accomodation->id}}">
     <input id="title" type="hidden" value="{{$accomodation->title}}">
 
 {{-- SHOW section  --}}
@@ -27,7 +26,46 @@
             {{-- TITOLO SEZIONE --}}
             <div class="col-12">
                 <h2 class="title text-center">{{$accomodation->title}}</h2>
-                <span class="btn_std text-center">> CONTATTA L'HOST</span>
+                <span id="btn_contact_host" class=" btn_std text-center"><i class='fas fa-angle-double-down'></i><span> CONTATTA L'HOST</span></span>
+                <div id="sec_contact" class="contact">
+                    <div id="inputs" class="wrap_inputs">
+                        {{-- Accomodation Id --}}
+                        <input id="accomodation_id" name="accomodation_id" type="hidden" value="{{$accomodation->id}}">
+                        <div class="row">
+                            {{-- Message text --}}
+                            <div class="col-md-6 col-12">
+                                <div class="col-12">
+                                    <span class="label"></span>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form_input" name="text_message" id="text_message" placeholder="Cosa vuoi chiedere all'Host?" ></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                {{-- Email --}}
+                                <div class="col-12">
+                                    <span id="email_label" class="label"></span>
+                                </div>
+                                <div class="col-12">
+                                    <input class="form_input" autocomplete="off" type="text" name="email" id="email" placeholder="Inserisci la tua email">
+                                </div>  
+                                {{-- Nickname --}}
+                                <div class="col-12">
+                                    <span id="nickname_label" class="label"></span>
+                                </div>
+                                <div class="col-12">
+                                    <input class="form_input" autocomplete="off" type="text" name="nickname" id="nickname" placeholder="Inserisci nome o nickname" >
+                                </div>
+                                <div class="col-12">
+                                    <div class="wrap_btn_send">
+                                        {{-- Send button --}}
+                                        <span id="btn_send" class="btn_std"><i class="far fa-paper-plane"></i>INVIA MESSAGGIO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         {{-- /BOOTSTRAP ROW --}}
         </div>
@@ -155,7 +193,10 @@
                     {{-- <h2>Test TOM TOM Map</h2> --}}
                     {{-- MAP WRAPPER --}}
                     <div class="map_wrapper">
-                        <span id="home_btn">HOME</span>
+                        <div id="home_btn" class="d-flex">
+                            <span>HOME</span>
+                            <img class="map_home_btn_icon" src="{{asset('storage/map_image/map_icon_boolbnb.png')}}" alt="">
+                        </div>
                         {{-- MAP DIV --}}
                         <div id='map' class='map'>
                         </div>
@@ -175,9 +216,9 @@
 @endsection
 
 @section('footer')
-    <div class="wrap_footer">
+    {{-- <div class="wrap_footer"> --}}
         @include('UI.Partials.footer')
-    </div>
+    {{-- </div> --}}
 @endsection
 
 @section('src')
