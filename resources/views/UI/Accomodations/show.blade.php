@@ -19,6 +19,13 @@
 
 {{-- SHOW section  --}}
 <section class="show">
+    <div id="toast_msg" class="toast_message d-flex align-items-center">
+        <img class="toast_img" src="{{asset('storage/map_image/map_icon_boolbnb.png')}}" alt="">
+        <div class="wrap_toast_text">
+            <h6 id="toast_title" class="toast_title">Messaggio...</h6>
+            <p id="toast_text" class="toast_text">Text....</p>
+        </div>
+    </div>
     {{-- BOOTSTRAP CONTAINER --}}
     <div class="container">
         {{-- BOOTSTRAP ROW --}}
@@ -32,35 +39,23 @@
                         {{-- Accomodation Id --}}
                         <input id="accomodation_id" name="accomodation_id" type="hidden" value="{{$accomodation->id}}">
                         <div class="row">
-                            {{-- Message text --}}
+                            {{-- LEFT COLUMN --}}
                             <div class="col-md-6 col-12">
-                                <div class="col-12">
-                                    <span class="label"></span>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form_input" name="text_message" id="text_message" placeholder="Cosa vuoi chiedere all'Host?" ></textarea>
-                                </div>
+                                {{-- Message text --}}
+                                <span id="text_message_label" class="label"></span>
+                                <textarea class="form_input" name="text_message" id="text_message" maxlength="500" placeholder="Cosa vuoi chiedere all'Host? (max: 500 caratteri)" ></textarea>
                             </div>
+                            {{-- RIGHT COLUMN --}}
                             <div class="col-md-6 col-12">
                                 {{-- Email --}}
-                                <div class="col-12">
-                                    <span id="email_label" class="label"></span>
-                                </div>
-                                <div class="col-12">
-                                    <input class="form_input" autocomplete="off" type="text" name="email" id="email" placeholder="Inserisci la tua email">
-                                </div>  
+                                <span id="email_label" class="label"></span>
+                                <input class="form_input" autocomplete="off" type="text" name="email" id="email" maxlength="100" placeholder="Inserisci la tua email">
                                 {{-- Nickname --}}
-                                <div class="col-12">
-                                    <span id="nickname_label" class="label"></span>
-                                </div>
-                                <div class="col-12">
-                                    <input class="form_input" autocomplete="off" type="text" name="nickname" id="nickname" placeholder="Inserisci nome o nickname" >
-                                </div>
-                                <div class="col-12">
-                                    <div class="wrap_btn_send">
-                                        {{-- Send button --}}
-                                        <span id="btn_send" class="btn_std"><i class="far fa-paper-plane"></i>INVIA MESSAGGIO</span>
-                                    </div>
+                                <span id="nickname_label" class="label"></span>
+                                <input class="form_input" autocomplete="off" type="text" name="nickname" id="nickname" maxlength="50" placeholder="Inserisci nome o nickname" >
+                                <div class="wrap_btn_send">
+                                    {{-- Send button --}}
+                                    <span id="btn_send" class="btn_std"><i class="far fa-paper-plane"></i>INVIA MESSAGGIO</span>
                                 </div>
                             </div>
                         </div>

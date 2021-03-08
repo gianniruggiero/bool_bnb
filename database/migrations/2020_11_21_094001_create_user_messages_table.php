@@ -19,8 +19,7 @@ class CreateUserMessagesTable extends Migration
 
             $table->string('email',100);
             $table->string('nickname',50)->default('guest');
-            $table->text('text_message');
-
+            $table->string('text_message',500);
             $table->timestamps();
 
             // Istruzioni per cancellazione chiave esterna

@@ -15,7 +15,6 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/search.js', 'public/js')
     .js('resources/js/show.js', 'public/js')
     .js('resources/js/functions.js', 'public/js')
-    .js('resources/js/mobile-or-tablet.js', 'public/js')
     .js('resources/js/map.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 

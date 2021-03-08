@@ -2,18 +2,18 @@
     width: 100%;
     text-align: center;
     background: $color_3;
-    padding: 90px 0px 30px 0px;
+    padding: 90px 0px 90px 0px;
     // position: relative;
     // top: 60px;
 
     @media (max-width: 768px) {
-        padding: 135px 0px 30px 0px;
+        padding: 135px 0px 90px 0px;
         // position: relative;
         // top: 105px;
     }
 
     @media (max-width: 576px) {
-        padding: 30px 0px;
+        padding: 30px 0px 90px 0px;
         position: relative;
         top: 105px;
         // position: relative;
@@ -36,6 +36,33 @@
     @include btn_std_mixin;
 
 
+    .toast_message {
+        padding: 10px;
+        width: 300px;
+        text-align: left;
+        position: fixed;
+        // display: none;
+        background-color: $color_4;
+        color: $color_2;
+        top: calc(100vh - 120px);
+        right: -305px;
+        z-index: 3;
+        transition: all 1s;
+        box-shadow: 3px 3px 8px $color_5;
+        border: 1px solid $color_1;
+        .toast_img{
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .toast_title{
+            font-weight: bold;
+        }
+        .toast_text {
+            margin: 0px;
+        }
+
+    }
 
     .contact {
         width: 100%;
@@ -50,12 +77,11 @@
             .label {
                 color: red;
                 display: flex;
-                align-items: center;
+                align-items: flex-end;
                 width: 100%;
                 height: 40px;
                 text-align: right;
                 font-size: 16px;
-                line-height: 16px;
             }
             textarea:focus, input:focus {
                 outline: none;
@@ -100,10 +126,14 @@
             #btn_send {
                 width: 20px;
                 position: relative;
-                top: 50px;
+                top: 55px;
+                @media (max-width: 767px){
+                    top: 45px;
+                }
                 .fa-paper-plane {
                     margin-right: 10px;
                 }
+
             }
         }
     
@@ -111,6 +141,11 @@
             opacity: 1;
         }
         
+    }
+
+    .contact_disabled {
+        pointer-events: none;
+        opacity: 0.6;
     }
 
     .contact_open  {
@@ -255,6 +290,13 @@
         }
     
     }
+
+
+    .toast_on {
+        right: 20px;
+
+    }
+
     // include for Tom Tom map mixin
     @include map_mixin;
 
